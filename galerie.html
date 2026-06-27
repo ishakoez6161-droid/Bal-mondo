@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galerie | Bal-Mondo 60</title>
+<meta name="description" content="Einblicke in Bal-Mondo 60: unsere Speisen, der Gastraum und unser Restaurant in Monschau.">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add("js-enabled");</script>
+</head>
+<body data-page="galerie">
+
+<div id="site-header"></div>
+
+<main>
+  <section class="section" style="padding-top:110px;">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Galerie</span>
+        <h2>Ein Blick zu uns</h2>
+        <p>Speisen, Gastraum und unser Restaurant in der Laufenstraße 60.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item wide" data-full="images/restaurant-aussenansicht.jpg">
+          <img src="images/restaurant-aussenansicht.jpg" alt="Außenansicht von Bal-Mondo 60 in Monschau" loading="lazy">
+          <div class="gallery-caption">Unser Restaurant in der Laufenstraße 60</div>
+        </div>
+        <div class="gallery-item" data-full="images/vorspeisenteller-boeregi.jpg">
+          <img src="images/vorspeisenteller-boeregi.jpg" alt="Sigara Böregi mit Cacik, Tomate und frischem Salat" loading="lazy">
+          <div class="gallery-caption">Sigara Böregi mit Cacik</div>
+        </div>
+        <div class="gallery-item" data-full="images/doener-teller-pommes.jpg">
+          <img src="images/doener-teller-pommes.jpg" alt="Drehspieß-Teller mit Pommes, Salat und Cacik" loading="lazy">
+          <div class="gallery-caption">Drehspießteller mit Pommes</div>
+        </div>
+        <div class="gallery-item wide" data-full="images/restaurant-innenansicht.jpg">
+          <img src="images/restaurant-innenansicht.jpg" alt="Gemütlicher Gastraum von Bal-Mondo 60" loading="lazy">
+          <div class="gallery-caption">Unser gemütlicher Gastraum</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Schließen">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script src="js/partials.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener("partials:ready", () => {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  document.querySelectorAll(".gallery-item").forEach((item) => {
+    item.addEventListener("click", () => {
+      lightboxImg.src = item.dataset.full;
+      lightboxImg.alt = item.querySelector("img").alt;
+      lightbox.classList.add("is-open");
+    });
+  });
+  const close = () => lightbox.classList.remove("is-open");
+  document.getElementById("lightboxClose").addEventListener("click", close);
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+});
+</script>
+</body>
+</html>
