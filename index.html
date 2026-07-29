@@ -17,10 +17,10 @@
     <div class="hero-inner">
       <span class="hero-eyebrow">Döner-Restaurant &middot; Monschau</span>
       <h1>Frisch gemacht.<br>Mit Liebe <span>serviert.</span></h1>
-      <p>Bei Bal-Mondo 60 erwarten Sie saftiger Döner, hausgemachte türkische Spezialitäten, knusprige Pizza und mehr &mdash; mitten in Monschau, täglich frisch zubereitet.</p>
+      <p class="hero-desc">Bei Bal-Mondo 60 erwarten Sie saftiger Döner, hausgemachte türkische Spezialitäten, knusprige Pizza und mehr &mdash; mitten in Monschau, täglich frisch zubereitet.</p>
       <div class="hero-actions">
-        <a href="speisekarte.html" class="btn btn-primary">Speisekarte ansehen</a>
-        <a href="tel:+491633450894" class="btn btn-outline">📞 Jetzt anrufen</a>
+        <a href="#reservierung" class="btn btn-primary">Tisch reservieren</a>
+        <a href="speisekarte.html" class="btn btn-outline">Speisekarte ansehen</a>
       </div>
       <div class="hero-meta">
         <div><strong>Laufenstraße 60</strong>52156 Monschau</div>
@@ -28,6 +28,7 @@
         <div><strong>4,7 ★</strong>275 Bewertungen</div>
       </div>
     </div>
+    <div class="hero-scroll-hint" aria-hidden="true"><span></span></div>
   </section>
 
   <section class="section">
@@ -87,7 +88,7 @@
     <div class="container">
       <div class="cta-strip">
         <div>
-          <span class="eyebrow" style="color:#e2641f">Öffnungszeiten</span>
+          <span class="eyebrow" style="color:#c4922a">Öffnungszeiten</span>
           <h2>Wir sind für Sie da</h2>
           <table class="hours-table">
             <tr><td>Montag &ndash; Sonntag</td><td>09:00 &ndash; 22:00 Uhr</td></tr>
@@ -98,6 +99,79 @@
           <p>Rufen Sie uns direkt an oder kommen Sie auf eine Tasse Tee vorbei.</p>
           <a href="kontakt.html" class="btn btn-primary btn-block">Anfahrt &amp; Kontakt</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Reservierung ===== -->
+  <section class="section reservation-section" id="reservierung">
+    <div class="container">
+      <div class="reservation-grid">
+
+        <div class="reservation-info fade-in">
+          <span class="eyebrow">Tisch reservieren</span>
+          <h2>Reservieren Sie Ihren Platz</h2>
+          <p>Planen Sie einen besonderen Besuch? Wir freuen uns auf Sie. Hinterlassen Sie Ihre Wunschzeit oder rufen Sie uns direkt an &mdash; wir helfen Ihnen gerne weiter.</p>
+          <div class="res-features">
+            <div class="res-feature">
+              <span class="res-icon">📅</span>
+              <span>Täglich geöffnet &mdash; Montag bis Sonntag</span>
+            </div>
+            <div class="res-feature">
+              <span class="res-icon">🕘</span>
+              <span>09:00 &ndash; 22:00 Uhr</span>
+            </div>
+            <div class="res-feature">
+              <span class="res-icon">📞</span>
+              <span><a href="tel:+491633450894">0163 3450894</a> &mdash; direkte Reservierung</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reservation-form-wrap fade-in">
+          <h3>Tisch anfragen</h3>
+          <p>Ihre Anfrage wird per E-Mail an uns weitergeleitet.</p>
+          <form class="reservation-form" action="mailto:nimettinbal9@gmail.com" method="get" enctype="text/plain">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-name">Ihr Name</label>
+                <input type="text" id="res-name" name="Name" required placeholder="Vor- und Nachname">
+              </div>
+              <div class="form-group">
+                <label for="res-guests">Personen</label>
+                <select id="res-guests" name="Personen">
+                  <option>1 Person</option>
+                  <option selected>2 Personen</option>
+                  <option>3 Personen</option>
+                  <option>4 Personen</option>
+                  <option>5 Personen</option>
+                  <option>6+ Personen</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-date">Datum</label>
+                <input type="date" id="res-date" name="Datum" required>
+              </div>
+              <div class="form-group">
+                <label for="res-time">Uhrzeit</label>
+                <input type="time" id="res-time" name="Uhrzeit" min="09:00" max="21:00" value="13:00">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="res-phone">Telefon (für Rückfragen)</label>
+              <input type="tel" id="res-phone" name="Telefon" placeholder="Ihre Telefonnummer">
+            </div>
+            <div class="form-group">
+              <label for="res-notes">Besondere Wünsche</label>
+              <textarea id="res-notes" name="body" rows="3" placeholder="z. B. Geburtstag, Sitzwunsch, Allergien &hellip;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Tisch anfragen</button>
+            <p class="form-note">Beim Absenden öffnet sich Ihr E-Mail-Programm mit einer vorausgefüllten Nachricht. Für eine sofortige Bestätigung rufen Sie uns direkt an: <a href="tel:+491633450894">0163 3450894</a>.</p>
+          </form>
+        </div>
+
       </div>
     </div>
   </section>
